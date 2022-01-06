@@ -7,7 +7,7 @@ local Source = {}
 M.Source = Source
 
 function Source.new()
-  return setmetatable({}, {__index = Source})
+  return setmetatable({}, { __index = Source })
 end
 
 function Source:is_available()
@@ -22,7 +22,7 @@ function Source:complete(_, callback)
   -- not impl cache for filetype
   local snippets = fn["neosnippet#helpers#get_completion_snippets"]()
   local items = vim.tbl_map(function(s)
-    return {label = s.word, kind = kind}
+    return { label = s.word, kind = kind }
   end, snippets)
   callback(items)
 end
